@@ -89,6 +89,26 @@ npm run dev
 3. 系统验证取件码有效性
 4. 点击下载按钮获取文件
 
+## 🖼️ 功能截图
+
+### 📤 文件上传界面
+![文件上传](image/upload.PNG)
+
+### 📥 文件下载界面
+![文件下载](image/download.PNG)
+
+### 🔑 取件码显示
+![取件码](image/code.PNG)
+
+### 📱 二维码生成
+![二维码](image/qrcode.PNG)
+
+### 📸 系统主页
+![系统主页](image/photo.PNG)
+
+### 📥 下载确认
+![下载确认](image/download2.PNG)
+
 ## 🔧 配置说明
 
 ### 环境变量

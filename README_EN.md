@@ -138,6 +138,26 @@ GET /api/qr/generate/ABC123
 }
 ```
 
+## 🖼️ Screenshots
+
+### 📤 File Upload Interface
+![File Upload](image/upload.PNG)
+
+### 📥 File Download Interface
+![File Download](image/download.PNG)
+
+### 🔑 Pickup Code Display
+![Pickup Code](image/code.PNG)
+
+### 📱 QR Code Generation
+![QR Code](image/qrcode.PNG)
+
+### 🏠 System Homepage
+![System Homepage](image/photo.PNG)
+
+### 📥 Download Confirmation
+![Download Confirmation](image/download2.PNG)
+
 ## 🔧 Configuration
 
 ### Environment Variables
