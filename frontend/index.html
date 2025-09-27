@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="公司文件管理系统 - 基于取件码的文件共享平台" />
+    <meta name="keywords" content="文件共享,取件码,文件上传,文件下载,3D界面" />
+    <meta name="author" content="Pe0ny9" />
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- PWA配置 -->
+    <meta name="theme-color" content="#3b82f6" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- 社交媒体标签 -->
+    <meta property="og:title" content="公司文件管理系统" />
+    <meta property="og:description" content="现代化的文件共享平台，支持3D界面交互" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <title>公司文件管理系统</title>
+    
+    <!-- 内联关键CSS以减少首屏渲染时间 -->
+    <style>
+      /* 加载动画 */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      .loading-text {
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 20px;
+        opacity: 0.9;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* 隐藏滚动条直到应用加载完成 */
+      body {
+        overflow: hidden;
+      }
+      
+      body.loaded {
+        overflow: auto;
+      }
+      
+      /* 3D场景容器基础样式 */
+      #app {
+        min-height: 100vh;
+        background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 加载屏幕 -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">正在加载 3D 文件管理系统...</div>
+    </div>
+    
+    <!-- 应用容器 -->
+    <div id="app"></div>
+    
+    <!-- 不支持JavaScript的提示 -->
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+      ">
+        <h1 style="color: #374151; margin-bottom: 20px;">需要启用 JavaScript</h1>
+        <p style="color: #6b7280; max-width: 500px; line-height: 1.6;">
+          此应用程序需要 JavaScript 才能正常运行。请在浏览器设置中启用 JavaScript，然后重新加载页面。
+        </p>
+      </div>
+    </noscript>
+    
+    <!-- WebGL支持检测 -->
+    <script>
+      // 检测WebGL支持
+      function checkWebGLSupport() {
+        try {
+          const canvas = document.createElement('canvas');
+          const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+          return !!gl;
+        } catch (e) {
+          return false;
+        }
+      }
+      
+      // 如果不支持WebGL，显示警告
+      if (!checkWebGLSupport()) {
+        console.warn('WebGL not supported, 3D features will be disabled');
+        window.webglSupported = false;
+      } else {
+        window.webglSupported = true;
+      }
+      
+      // 移除加载屏幕
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+              loadingScreen.remove();
+              document.body.classList.add('loaded');
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+    
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
