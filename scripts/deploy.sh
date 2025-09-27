@@ -197,7 +197,7 @@ show_help() {
     echo ""
     echo "示例:"
     echo "  $0 start prod     # 生产环境启动"
-    echo "  $0 logs backend   # 查看后端日志"
+    echo "  $0 logs api       # 查看后端日志"
     echo "  $0 health         # 执行健康检查"
 }
 

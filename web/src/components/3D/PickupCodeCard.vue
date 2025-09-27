@@ -133,7 +133,7 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { CopyDocument, Check, Clock, Share, Picture } from '@element-plus/icons-vue'
 import { ElMessage, ElDialog } from 'element-plus'
-import * as THREE from 'three'
+import * as THREE from 'node_modules/@types/three'
 import { gsap } from 'gsap'
 import { apiClient } from '../../utils/api'
 

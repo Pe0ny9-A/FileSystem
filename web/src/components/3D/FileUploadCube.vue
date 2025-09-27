@@ -89,7 +89,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { Upload, Download, Check } from '@element-plus/icons-vue'
-import * as THREE from 'three'
+import * as THREE from 'node_modules/@types/three'
 import { gsap } from 'gsap'
 
 // Props

@@ -53,26 +53,28 @@ company-file-system/
 - npm 或 yarn
 - 现代浏览器（支持WebGL）
 
-### 安装依赖
+### 快速启动
+```bash
+# 安装所有依赖
+npm run install:all
+
+# 一键启动前后端服务
+npm run dev
+```
+
+### 手动启动（可选）
 ```bash
 # 安装后端依赖
-cd backend
+cd api
 npm install
 
 # 安装前端依赖
-cd ../frontend
+cd ../web
 npm install
-```
 
-### 启动开发服务器
-```bash
-# 启动后端服务 (端口3000)
-cd backend
-npm run dev
-
-# 启动前端服务 (端口5173)
-cd ../frontend
-npm run dev
+# 分别启动服务
+npm run dev:api    # 后端服务 (端口3000)
+npm run dev:web    # 前端服务 (端口5173)
 ```
 
 ## 📖 使用说明

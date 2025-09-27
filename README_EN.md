@@ -54,24 +54,28 @@ FileSystem/
 - npm or yarn
 - Modern browser (WebGL support)
 
-### Install Dependencies
+### Quick Start
+```bash
+# Install all dependencies
+npm run install:all
+
+# Start both frontend and backend
+npm run dev
+```
+
+### Manual Setup (Optional)
 ```bash
 # Install backend dependencies
-cd backend
+cd api
 npm install
 
 # Install frontend dependencies
-cd ../frontend
+cd ../web
 npm install
-```
 
-### Development
-```bash
-# Start backend (in backend directory)
-npm run dev
-
-# Start frontend (in frontend directory)
-npm run dev
+# Start services separately
+npm run dev:api    # Backend service (port 3000)
+npm run dev:web    # Frontend service (port 5173)
 ```
 
 Visit `http://localhost:5173` to see the application.

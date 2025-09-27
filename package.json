@@ -1,0 +1,32 @@
+{
+  "name": "filesystem-3d",
+  "version": "1.0.0",
+  "description": "A modern 3D file sharing system with pickup codes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "cd api && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "build": "cd web && npm run build",
+    "start": "cd api && npm start",
+    "test": "cd api && npm test",
+    "install:all": "npm install && cd web && npm install && cd ../api && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "file-sharing",
+    "3d-interface",
+    "vue",
+    "nodejs",
+    "express",
+    "three.js"
+  ],
+  "author": "Pe0ny9",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pe0ny9-A/FileSystem.git"
+  }
+}
