@@ -40,8 +40,8 @@ English | [中文](README.md)
 
 ```
 FileSystem/
-├── frontend/          # Vue3 frontend app
-├── backend/           # Node.js backend API
+├── web/              # Vue3 frontend app
+├── api/              # Node.js backend API
 ├── docs/             # Project documentation
 ├── docker-compose.yml # Docker deployment
 └── README.md         # Project documentation
