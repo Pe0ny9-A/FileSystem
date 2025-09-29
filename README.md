@@ -69,7 +69,7 @@ cd api
 npm install
 
 # 安装前端依赖
-cd ../web
+cd web
 npm install
 
 # 分别启动服务
@@ -135,11 +135,11 @@ docker-compose up -d
 ### 手动部署
 ```bash
 # 构建前端
-cd frontend
+cd web
 npm run build
 
 # 启动后端
-cd ../backend
+cd api
 npm start
 ```
 
