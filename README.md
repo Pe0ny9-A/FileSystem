@@ -39,8 +39,8 @@
 
 ```
 company-file-system/
-├── frontend/          # Vue3前端应用
-├── backend/           # Node.js后端API
+├── web/              # Vue3前端应用
+├── api/              # Node.js后端API
 ├── docs/             # 项目文档
 ├── .cursor/          # Cursor开发规则
 └── README.md         # 项目说明
